@@ -41,6 +41,15 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
+/* Accessible keyboard focus (impeccable: every interactive element must show
+   where focus is) — visible only for keyboard users, never on mouse click. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+:focus:not(:focus-visible) { outline: none; }
+
 .page { position: relative; overflow-x: clip; }
 
 /* Subtle film grain over the warm background */

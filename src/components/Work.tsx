@@ -1,21 +1,23 @@
 import { useReveal } from '../hooks/useReveal'
-import { PROJECTS } from '../data'
+import { useI18n } from '../i18n'
+import { PROJECTS, type Project } from '../data'
 
 export function Work() {
+  const { t } = useI18n()
   return (
     <section className="work" id="work">
-      <SectionHead index="01" title="Selected work" hint="Built, shipped, deployed" />
+      <SectionHead index="01" title={t.work.title} hint={t.work.hint} />
 
       <ol className="work__list">
         {PROJECTS.map((p, i) => (
-          <WorkRow key={p.name} project={p} n={i + 1} />
+          <WorkRow key={p.id} project={p} blurb={t.projectBlurbs[p.id]} n={i + 1} />
         ))}
       </ol>
     </section>
   )
 }
 
-function WorkRow({ project, n }: { project: (typeof PROJECTS)[number]; n: number }) {
+function WorkRow({ project, blurb, n }: { project: Project; blurb: string; n: number }) {
   const { ref, shown } = useReveal<HTMLLIElement>()
   return (
     <li ref={ref} className={`row reveal ${shown ? 'is-in' : ''}`}>
@@ -23,7 +25,7 @@ function WorkRow({ project, n }: { project: (typeof PROJECTS)[number]; n: number
 
       <div className="row__body">
         <h3 className="row__name">{project.name}</h3>
-        <p className="row__blurb">{project.blurb}</p>
+        <p className="row__blurb">{blurb}</p>
         <ul className="row__stack">
           {project.stack.map((s) => (
             <li key={s}>{s}</li>

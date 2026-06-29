@@ -1,4 +1,5 @@
 import { useEffect, useState, lazy, Suspense, type CSSProperties } from 'react'
+import { useI18n } from '../i18n'
 
 const CatScene = lazy(() => import('./CatScene'))
 
@@ -6,6 +7,7 @@ const CatScene = lazy(() => import('./CatScene'))
 const delay = (i: number) => ({ '--i': i }) as unknown as CSSProperties
 
 export function Hero() {
+  const { t } = useI18n()
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
@@ -17,35 +19,31 @@ export function Hero() {
     <header className={`hero ${loaded ? 'is-in' : ''}`} id="top">
       <div className="hero__copy">
         <p className="hero__eyebrow stagger" style={delay(0)}>
-          Senior Full-Stack Developer · Latin America — Remote
+          {t.hero.eyebrow}
         </p>
 
         <h1 className="hero__title">
           <span className="stagger" style={delay(1)}>
-            I build interfaces that stay
+            {t.hero.titleBefore}
           </span>
           <span className="stagger" style={delay(2)}>
-            <em>fast and clear</em> under
+            <em>{t.hero.titleEm}</em>
           </span>
           <span className="stagger" style={delay(3)}>
-            real complexity.
+            {t.hero.titleAfter}
           </span>
         </h1>
 
         <p className="hero__lede stagger" style={delay(4)}>
-          Five-plus years shipping React &amp; TypeScript products for U.S. teams —
-          data-heavy dashboards, real-time tooling, and the performance work that
-          takes a page from sluggish to instant.
+          {t.hero.lede}
         </p>
 
         <div className="hero__meta stagger" style={delay(5)}>
           <a className="hero__cta" href="#work">
-            See selected work
+            {t.hero.cta}
             <span className="hero__arrow" aria-hidden="true">→</span>
           </a>
-          <span className="hero__stat">
-            <strong>~35%</strong> faster load · <strong>~30%</strong> fewer prod bugs
-          </span>
+          <span className="hero__stat">{t.hero.stat}</span>
         </div>
       </div>
 
@@ -53,7 +51,7 @@ export function Hero() {
         <Suspense fallback={<div className="hero__scene-load" />}>
           <CatScene />
         </Suspense>
-        <span className="hero__scene-hint">drag to tilt · he’s shipping too</span>
+        <span className="hero__scene-hint">{t.sceneHint}</span>
       </div>
     </header>
   )

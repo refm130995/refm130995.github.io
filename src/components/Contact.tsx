@@ -1,19 +1,20 @@
 import { useReveal } from '../hooks/useReveal'
+import { useI18n } from '../i18n'
 import { STACK } from '../data'
 
 export function Contact() {
+  const { t } = useI18n()
   const { ref, shown } = useReveal<HTMLElement>()
   return (
     <section ref={ref} className={`contact reveal ${shown ? 'is-in' : ''}`} id="contact">
       <span className="contact__index">03</span>
 
       <h2 className="contact__title">
-        Let’s build something <em>that lasts</em>.
+        {t.contact.titleBefore} <em>{t.contact.titleEm}</em>
+        {t.contact.titleAfter}
       </h2>
 
-      <p className="contact__lede">
-        Open to remote roles and collaborations. The fastest way to reach me is email.
-      </p>
+      <p className="contact__lede">{t.contact.lede}</p>
 
       <div className="contact__links">
         <a className="contact__primary" href="mailto:refm.130995@gmail.com">
@@ -29,7 +30,7 @@ export function Contact() {
         </div>
       </div>
 
-      <ul className="contact__stack" aria-label="Tools I work with">
+      <ul className="contact__stack" aria-label="Tools">
         {STACK.map((s) => (
           <li key={s}>{s}</li>
         ))}
@@ -37,7 +38,7 @@ export function Contact() {
 
       <footer className="contact__foot">
         <span>Ramon Eduardo Figuera · he/him</span>
-        <span>Designed &amp; built with React + TypeScript</span>
+        <span>{t.contact.foot}</span>
       </footer>
     </section>
   )

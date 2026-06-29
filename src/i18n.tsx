@@ -18,6 +18,7 @@ interface Dict {
   sceneHint: string
   work: { title: string; hint: string }
   path: { title: string; hint: string }
+  present: string
   contact: {
     titleBefore: string
     titleEm: string
@@ -45,6 +46,7 @@ export const DICT: Record<Lang, Dict> = {
     sceneHint: 'drag to tilt · he’s shipping too',
     work: { title: 'Selected work', hint: 'Built, shipped, deployed' },
     path: { title: 'The path so far', hint: 'Remote, for U.S. teams' },
+    present: 'Present',
     contact: {
       titleBefore: 'Let’s build something',
       titleEm: 'that lasts',
@@ -67,6 +69,8 @@ export const DICT: Record<Lang, Dict> = {
         'Weather with city autocomplete and a 7-day forecast, themed by the location’s local day or night. Built on the free Open-Meteo API.',
     },
     roleNotes: {
+      tribeapp:
+        'Technical lead at TribeApp — owning the frontend architecture, setting code standards and mentoring the team while building the product end-to-end with React and TypeScript.',
       brocsoft:
         'Cut frontend load time ~35% (Lighthouse / CWV) by refactoring React components and trimming the bundle; reduced production bugs ~30%.',
       dbaccess:
@@ -93,6 +97,7 @@ export const DICT: Record<Lang, Dict> = {
     sceneHint: 'arrastra para girar · él también está programando',
     work: { title: 'Proyectos seleccionados', hint: 'Construidos, lanzados, desplegados' },
     path: { title: 'El trayecto hasta ahora', hint: 'Remoto, para equipos de EE.UU.' },
+    present: 'Presente',
     contact: {
       titleBefore: 'Construyamos algo',
       titleEm: 'que perdure',
@@ -115,6 +120,8 @@ export const DICT: Record<Lang, Dict> = {
         'Clima con autocompletado de ciudades y pronóstico de 7 días, con tema según el día o la noche local. Construido sobre la API gratuita Open-Meteo.',
     },
     roleNotes: {
+      tribeapp:
+        'Líder técnico en TribeApp — a cargo de la arquitectura frontend, definiendo estándares de código y dando mentoría al equipo mientras construyo el producto de extremo a extremo con React y TypeScript.',
       brocsoft:
         'Reduje el tiempo de carga del frontend ~35% (Lighthouse / CWV) refactorizando componentes React y recortando el bundle; bajé los bugs en producción ~30%.',
       dbaccess:
@@ -141,6 +148,7 @@ export const DICT: Record<Lang, Dict> = {
     sceneHint: 'trascina per ruotare · sta lavorando anche lui',
     work: { title: 'Progetti selezionati', hint: 'Costruiti, rilasciati, in produzione' },
     path: { title: 'Il percorso finora', hint: 'Da remoto, per team statunitensi' },
+    present: 'Oggi',
     contact: {
       titleBefore: 'Costruiamo qualcosa',
       titleEm: 'che duri',
@@ -163,6 +171,8 @@ export const DICT: Record<Lang, Dict> = {
         'Meteo con autocompletamento delle città e previsioni a 7 giorni, con tema in base al giorno o alla notte locale. Costruito sull’API gratuita Open-Meteo.',
     },
     roleNotes: {
+      tribeapp:
+        'Lead tecnico in TribeApp — responsabile dell’architettura frontend, definizione degli standard di codice e mentoring del team, costruendo il prodotto end-to-end con React e TypeScript.',
       brocsoft:
         'Ho ridotto il tempo di caricamento del frontend del ~35% (Lighthouse / CWV) rifattorizzando i componenti React e alleggerendo il bundle; bug in produzione ridotti del ~30%.',
       dbaccess:

@@ -12,6 +12,7 @@ export interface Role {
   title: string
   period: string
   location: string
+  current?: boolean
 }
 
 export const PROJECTS: Project[] = [
@@ -60,7 +61,8 @@ export const PROJECTS: Project[] = [
 ]
 
 export const ROLES: Role[] = [
-  { id: 'brocsoft', company: 'Brocsoft', title: 'Senior Frontend Developer', period: '2024', location: 'Remote · Austin, TX' },
+  { id: 'tribeapp', company: 'TribeApp', title: 'Technical Lead', period: '2024', location: 'Remote', current: true },
+  { id: 'brocsoft', company: 'Brocsoft', title: 'Senior Frontend Developer', period: 'Apr – Nov 2024', location: 'Remote · Austin, TX' },
   { id: 'dbaccess', company: 'DBAccess', title: 'Full-Stack Developer', period: '2023 – 2024', location: 'Remote · Miami, FL' },
   { id: 'corbin', company: 'Corbin & Brooks', title: 'Frontend Developer', period: '2022 – 2023', location: 'Remote · Eugene, OR' },
   { id: 'pegasi', company: 'Pegasi', title: 'Full-Stack Developer', period: '2021 – 2022', location: 'Remote · Santiago, CL' },

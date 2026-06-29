@@ -11,19 +11,22 @@ export function Path() {
 
       <div className="path__list">
         {ROLES.map((r) => (
-          <Entry key={r.id} role={r} note={t.roleNotes[r.id]} />
+          <Entry key={r.id} role={r} note={t.roleNotes[r.id]} present={t.present} />
         ))}
       </div>
     </section>
   )
 }
 
-function Entry({ role, note }: { role: Role; note: string }) {
+function Entry({ role, note, present }: { role: Role; note: string; present: string }) {
   const { ref, shown } = useReveal<HTMLDivElement>()
   return (
     <div ref={ref} className={`entry reveal ${shown ? 'is-in' : ''}`}>
       <div className="entry__meta">
-        <span className="entry__period">{role.period}</span>
+        <span className="entry__period">
+          {role.period}
+          {role.current && <span className="entry__now"> — {present}</span>}
+        </span>
         <span className="entry__loc">{role.location}</span>
       </div>
       <div className="entry__body">

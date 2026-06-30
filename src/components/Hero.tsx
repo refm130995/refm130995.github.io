@@ -1,7 +1,7 @@
 import { useEffect, useState, lazy, Suspense, type CSSProperties } from 'react'
 import { useI18n } from '../i18n'
 
-const CapybaraScene = lazy(() => import('./CapybaraScene'))
+const CatScene = lazy(() => import('./CatScene'))
 
 /** Pasa el índice de stagger como custom property al estilo del elemento. */
 const delay = (i: number) => ({ '--i': i }) as unknown as CSSProperties
@@ -49,7 +49,7 @@ export function Hero() {
 
       <div className="hero__scene" aria-hidden="true">
         <Suspense fallback={<div className="hero__scene-load" />}>
-          <CapybaraScene />
+          <CatScene />
         </Suspense>
         <span className="hero__scene-hint">{t.sceneHint}</span>
       </div>

@@ -1,14 +1,14 @@
 import { Canvas } from '@react-three/fiber'
 import { Float, ContactShadows, PresentationControls } from '@react-three/drei'
-import { Capybara } from './Capybara'
+import { Cat } from './Cat'
 
 /**
- * Escena 3D del hero. Iluminación cálida acorde a la paleta (teal sobre
+ * Escena 3D del hero. Iluminación cálida acorde a la paleta (ámbar sobre
  * espresso), sombra de contacto suave y un point light que simula el brillo
  * de la pantalla de la laptop. PresentationControls deja inclinar la escena
  * arrastrando, sin perder el encuadre.
  */
-export default function CapybaraScene() {
+export default function CatScene() {
   return (
     <Canvas
       shadows
@@ -19,7 +19,7 @@ export default function CapybaraScene() {
       <ambientLight intensity={0.55} />
       <directionalLight position={[3, 5, 4]} intensity={1.4} castShadow />
       <directionalLight position={[-4, 2, -2]} intensity={0.3} color="#bfe8df" />
-      {/* Glow de la pantalla iluminando al capibara */}
+      {/* Glow de la pantalla iluminando al gato */}
       <pointLight position={[0, 0, 0.4]} intensity={2.4} distance={3} color="#2dd4bf" />
 
       <PresentationControls
@@ -29,7 +29,7 @@ export default function CapybaraScene() {
         config={{ mass: 1, tension: 180, friction: 26 }}
       >
         <Float speed={1.6} rotationIntensity={0.25} floatIntensity={0.4}>
-          <Capybara />
+          <Cat />
         </Float>
       </PresentationControls>
 
